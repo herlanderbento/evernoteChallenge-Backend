@@ -4,13 +4,15 @@ import { CreateProductServices } from "../services/CreateProductServices";
 
 export class CreateProductController {
   public async handle(request: Request, response: Response) {
-    const { name, description, category, brand } = request.body;
+    const { name, description, price, stock, category, brand } = request.body;
 
     const createProductServices = container.resolve(CreateProductServices);
 
     const product = await createProductServices.execute({
       name,
       description,
+      price,
+      stock,
       category,
       brand,
     });

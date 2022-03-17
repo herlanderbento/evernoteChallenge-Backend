@@ -1,12 +1,12 @@
 import mongoose, { Schema, Document, ObjectId } from "mongoose";
 
 type Product = Document & {
-  name: String;
-  description: String;
+  name: string;
+  description?: string;
   price: number;
   stock: number;
-  category_id: String;
-  brand_id: String;
+  category: string;
+  brand: string;
 };
 
 const ProductSchema = new Schema({

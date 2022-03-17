@@ -6,14 +6,19 @@ import { injectable } from "tsyringe";
 interface IRequest {
   name: string;
   description: string;
+  price: number;
+  stock: number;
   category: string;
   brand: string;
 }
+
 @injectable()
 export class CreateProductServices {
   public async execute({
     name,
     description,
+    price,
+    stock,
     category,
     brand,
   }: IRequest): Promise<Product> {
@@ -38,6 +43,8 @@ export class CreateProductServices {
     const product = await Product.create({
       name,
       description,
+      price,
+      stock,
       category,
       brand,
     });
