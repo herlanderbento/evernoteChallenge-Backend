@@ -7,7 +7,7 @@ import mongoose from "mongoose";
 import { routes } from "routes";
 
 const uri = `mongodb+srv://db_mypharma:${process.env.MONGO_PASS}@cluster0.uwbyg.mongodb.net/db_mypharma?retryWrites=true&w=majority`;
-// const url = "mongodb://localhost:27017/my_pharma";
+const url = "mongodb://localhost:27017/my_pharma";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
